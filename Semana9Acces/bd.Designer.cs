@@ -198,7 +198,7 @@ namespace Semana9Acces
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox1.Image = global::Semana9Acces.Properties.Resources.configuracion_de_la_base_de_datos;
-            this.pictureBox1.Location = new System.Drawing.Point(328, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(338, 66);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(144, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
