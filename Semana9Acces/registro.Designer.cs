@@ -190,7 +190,7 @@ namespace Semana9Acces
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(282, 18);
+            this.label6.Location = new System.Drawing.Point(282, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 30);
             this.label6.TabIndex = 27;
