@@ -15,9 +15,9 @@ using System.Data.OleDb;
 
 namespace Semana9Acces
 {
-    public partial class Form1 : Form
+    public partial class login : Form
     {
-        public Form1()
+        public login()
         {
             InitializeComponent();
         }
