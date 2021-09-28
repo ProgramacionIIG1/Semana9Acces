@@ -21,11 +21,13 @@ namespace Semana9Acces
 {
     public partial class login : Form
     {
-        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\sistema\\Sistema.accdb");
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\DELL\\Documents\\Userss.accdb");
         OleDbCommand com = new OleDbCommand();
+        OleDbCommand com2 = new OleDbCommand();
         OleDbDataReader dtr;
+        OleDbDataReader lector;
         bd based = new bd();
-
+        Inicio ini = new Inicio();
         public login()
         {
             InitializeComponent();
@@ -35,26 +37,68 @@ namespace Semana9Acces
         {
             com.Connection = con;
             com.CommandType = CommandType.Text;
-            com.CommandText = "SELECT clave FROM tusuario WHERE nombre='"+ textBox1.Text + "'";
+            com.CommandText = "SELECT Contraseña FROM Usuario WHERE Usuarios='" + textBox1.Text + "'";
             try
             {
                 dtr = com.ExecuteReader();
                 if (dtr.HasRows)
                 {
-                    while(dtr.Read())
+                    while (dtr.Read())
+                    {
+                        if (dtr.GetValue(0).ToString() == textBox3.Text)
                         {
-                        if(dtr.GetValue(0).ToString()== textBox3.Text)
-                        {
-                            based.Show();
-                        }
-                        else 
-                        {
-                            MessageBox.Show("Contrasena incorrecta");
+                            com2.Connection = con;
+                            com2.CommandType = CommandType.Text;
+                            com2.CommandText = "SELECT Nivel FROM Usuario WHERE Usuarios='" + textBox1.Text + "'";
+                            lector = com2.ExecuteReader();
+                            if (lector.HasRows)
+                            {
+
+                                while (lector.Read())
+                                {
+                                    try
+                                    {
+
+                                 
+                                        if (lector.GetValue(0).ToString() == textBox2.Text)
+                                        {
+
+                                            switch (Convert.ToInt32(textBox2.Text))
+                                            {
+                                                case 1:
+                                                    based.Show();
+                                                    this.Close();
+                                                    break;
+                                                case 2:
+                                                    ini.Show();
+                                                    this.Close();
+                                                    break;
+
+                                            }
+
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Paremetros incorrectos");
+                                        }
+                                    }
+                                    catch (OleDbException k)
+                                    {
+                                        MessageBox.Show(k.ToString());
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Contrasena incorrecta");
+                            }
                         }
                     }
                 }
             }
-            catch(OleDbException k)
+
+            catch (OleDbException k)
             {
                 MessageBox.Show(k.ToString());
             }

@@ -16,7 +16,9 @@ namespace Semana9Acces
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            login logi = new login();
+            logi.Show();
+            Application.Run();
         }
     }
 }

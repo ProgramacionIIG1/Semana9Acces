@@ -19,6 +19,8 @@ namespace Semana9Acces
 
         private void bd_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'userssDataSet.Usuario' Puede moverla o quitarla según sea necesario.
+            this.usuarioTableAdapter.Fill(this.userssDataSet.Usuario);
 
         }
 
@@ -39,17 +41,19 @@ namespace Semana9Acces
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            this.usuarioTableAdapter.UpdateQuery(txtUsuario.Text, txtContraseña.Text, Convert.ToInt32(txtNivel), Convert.ToInt32(txtID));
+            this.usuarioTableAdapter.Fill(this.userssDataSet.Usuario);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            this.usuarioTableAdapter.DeleteQuery(Convert.ToInt32(txtID.Text));
+            this.usuarioTableAdapter.Fill(this.userssDataSet.Usuario);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -59,7 +63,9 @@ namespace Semana9Acces
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            
+            this.usuarioTableAdapter.Insertardatos(Convert.ToInt32(txtID.Text),txtUsuario.Text,txtContraseña.Text,Convert.ToInt32(txtNivel.Text));
+            this.usuarioTableAdapter.Fill(this.userssDataSet.Usuario);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,6 +79,16 @@ namespace Semana9Acces
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
