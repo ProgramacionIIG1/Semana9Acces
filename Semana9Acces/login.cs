@@ -15,7 +15,7 @@ using System.Data.OleDb;
 //Julissa Odaly Sosa Flores
 //Erick Mauricio Tiznado Rodriguez
 //Franklin Stanley Larin Saravia 
-//Oscar Manuel
+//Oscar Manuel López Velasquez
 
 namespace Semana9Acces
 {
