@@ -71,5 +71,10 @@ namespace Semana9Acces
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
