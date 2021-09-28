@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bd.Designer.cs">
+      <DependentUpon>bd.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="registro.Designer.cs">
       <DependentUpon>registro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="bd.resx">
+      <DependentUpon>bd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\usuario-masculino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario-masculino1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
